@@ -1,4 +1,4 @@
-# 🍽️ MERN Stack Multi-Vendor Restaurant Application Documentation
+# 🍽️ Backend_Nodejs_Suby – MERN Stack Multi-Vendor Restaurant Application
 
 **Date:** March 23, 2024
 
@@ -6,31 +6,31 @@
 
 ## 📘 Project Overview
 
-This repository contains the **backend** of a **MERN Stack Multi-Vendor Restaurant Application**.
-It manages vendor registration, firm creation, and product management with JWT authentication and MongoDB integration.
+**Backend_Nodejs_Suby** is the **backend** service of a **MERN Stack Multi-Vendor Restaurant Application**.
+It provides APIs for vendor registration, firm and product management, authentication using JWT, and secure data storage with MongoDB.
 
 ---
 
 ## ⚙️ Dependencies
 
-The backend uses the following key dependencies:
+The backend uses the following dependencies:
 
 * **express** – Web framework for Node.js
 * **mongoose** – MongoDB object modeling tool
-* **dotenv** – Loads environment variables
-* **body-parser** – Parses incoming request bodies
-* **nodemon** – Auto restarts server during development
-* **jsonwebtoken (JWT)** – For secure authentication
-* **bcryptjs** – For password hashing
-* **multer** – For image/file uploads
-* **cors** – Enables cross-origin requests
+* **dotenv** – Environment variable configuration
+* **body-parser** – Parses incoming JSON requests
+* **nodemon** – Development server auto-reloader
+* **jsonwebtoken (JWT)** – Secure authentication
+* **bcryptjs** – Password hashing
+* **multer** – Image and file uploads
+* **cors** – Enable cross-origin requests
 
 ---
 
-## 🗄️ Connection to Database
+## 🗄️ Database Connection
 
-The server connects to **MongoDB** using **Mongoose** and environment variables from `.env`.
-Ensure your `.env` file includes:
+The server connects to **MongoDB** using **Mongoose**.
+Ensure your `.env` file includes the following variables:
 
 ```
 MONGO_URI=your_mongodb_connection_string
@@ -78,9 +78,9 @@ PORT=5000
 
 ### **Controllers**
 
-* `vendorController` – Handles vendor authentication and registration
-* `firmController` – Manages firm creation and deletion
-* `productController` – Handles product management
+* `vendorController` – Manages vendor authentication and registration
+* `firmController` – Handles firm creation and deletion
+* `productController` – Handles product CRUD operations
 
 ---
 
@@ -94,8 +94,9 @@ PORT=5000
 
 ## 🔐 JWT Tokens
 
-Different JWT tokens are generated for each login session.
-Examples:
+Each login generates a unique JWT for secure session management.
+
+Example Tokens:
 
 ```
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZW5kb3JJZCI6IjY1ZjA5Njk0YWZlYzMwNWE1YTI5MDVkYSIsImlhdCI6MTcxMDMzMDkwOSwiZXhwIjoxNzEwMzM0NTA5fQ.b_FvfjFXA7fE-rzicZI41htrPZHFM2YyfmoGnA7Cj9o
@@ -117,7 +118,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZW5kb3JJZCI6IjY1ZjA5Njk0YWZlYzMwNWE1YTI
 * **Login Vendor:**
   `POST https://backend-nodejs-suby.onrender.com/vendor/login`
 
-* **Get All Vendors (with relations):**
+* **Get All Vendors (with related records):**
   `GET https://backend-nodejs-suby.onrender.com/vendor/all-vendors`
 
 * **Get Single Vendor by ID:**
@@ -130,7 +131,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZW5kb3JJZCI6IjY1ZjA5Njk0YWZlYzMwNWE1YTI
 
 ### **Firm APIs**
 
-* **Add Firm (Authenticated via JWT):**
+* **Add Firm (JWT Required):**
   `POST https://backend-nodejs-suby.onrender.com/firm/add-firm`
 
 * **Delete Firm by ID:**
@@ -153,13 +154,13 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZW5kb3JJZCI6IjY1ZjA5Njk0YWZlYzMwNWE1YTI
 
 ## 🚀 Run the Backend Locally
 
-### **1. Install dependencies**
+### **1. Install Dependencies**
 
 ```bash
 npm install
 ```
 
-### **2. Start the development server**
+### **2. Start Development Server**
 
 ```bash
 npm run dev
@@ -167,15 +168,13 @@ npm run dev
 
 ### **3. Access API**
 
-Backend runs by default at:
-
 ```
 http://localhost:5000
 ```
 
 ---
 
-## 📄 Note
+## 📝 Note
 
-This repository contains **only the backend code**.
-Frontend (React client) is not included or pushed to GitHub.
+This repository (**Backend_Nodejs_Suby**) contains **only the backend code** of the Multi-Vendor Restaurant Application.
+The **frontend (React client)** is not included in this GitHub repository.
